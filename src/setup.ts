@@ -184,11 +184,17 @@ export async function runSetup(opts: { cliVersion?: string; token?: string } = {
     if (result.ok) {
       console.log(`  ${chalk.green('✓')} Browser connected in ${(result.durationMs / 1000).toFixed(1)}s`);
     } else {
+      console.log(`  ${chalk.green('✓')} Token saved successfully.`);
       console.log(`  ${chalk.yellow('!')} Browser connectivity test failed: ${result.error ?? 'unknown'}`);
-      console.log(chalk.dim('    Make sure Chrome is running with the extension enabled.'));
+      console.log(chalk.dim('    Token configuration is complete. To use opencli, make sure Chrome'));
+      console.log(chalk.dim('    is running with the Playwright MCP Bridge extension enabled.'));
+      console.log(chalk.dim(`    Run ${chalk.bold('opencli doctor --live')} to re-test connectivity.`));
     }
   } catch {
-    console.log(`  ${chalk.yellow('!')} Could not verify connectivity (Chrome may not be running)`);
+    console.log(`  ${chalk.green('✓')} Token saved successfully.`);
+    console.log(`  ${chalk.yellow('!')} Browser connectivity test skipped (Chrome may not be running).`);
+    console.log(chalk.dim('    Token configuration is complete. Start Chrome to begin using opencli.'));
+    console.log(chalk.dim(`    Run ${chalk.bold('opencli doctor --live')} to re-test connectivity.`));
   }
   console.log();
 }
