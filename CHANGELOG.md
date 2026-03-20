@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/jackwener/opencli/compare/v1.1.0...v1.2.0) (2026-03-20)
+
+
+### Features
+
+* add Bloomberg adapter ([#145](https://github.com/jackwener/opencli/issues/145)) ([7700704](https://github.com/jackwener/opencli/commit/7700704923f7887fcf0d0210b902a961aa3fd932))
+* auto-discover and dynamically register any local CLI on the fly ([4d3b972](https://github.com/jackwener/opencli/commit/4d3b972d676916b5c30aec8c4829307a0eda3aad))
+
 ## [1.1.0](https://github.com/jackwener/opencli/compare/v1.0.6...v1.1.0) (2026-03-20)
 
 
